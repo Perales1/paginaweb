@@ -1,11 +1,64 @@
 ---
-import Welcome from '../components/Welcome.astro';
+// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Card from '../components/Card.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Curso de Tecnologías Web 2026 | Summer Edition">
+	<main class="hero-container">
+
+		<div class="sun-blur"></div>
+
+		<section class="hero-content">
+			<span class="summer-badge animate-float">
+				☀️ Inscripciones Abiertas — Verano 2026
+			</span>
+
+			<h1 class="hero-title">
+				Domina el futuro de las
+				<span class="gradient-text">Tecnologías Web</span>
+			</h1>
+
+			<p class="hero-description">
+				Clases dinámicas orientadas a proyectos reales. Olvídate de la teoría aburrida y empieza a desplegar software moderno con tecnologías punteras desde el primer día.
+			</p>
+
+			<div class="cta-group">
+				<a href="#temario" class="btn-primary">Explorar Temario</a>
+				<a href="https://github.com" target="_blank" class="btn-secondary">Ver en GitHub</a>
+			</div>
+		</section>
+
+		<section id="temario" class="temario-content">
+			<div class="section-header">
+				<h2 class="section-subtitle">Plan de Estudios</h2>
+				<p class="section-title">Un temario diseñado para el mundo laboral</p>
+			</div>
+
+			<ul class="cards-grid">
+				<Card
+					step="01"
+					href="#"
+					title="Arquitectura Frontend"
+					body="Aprende Astro, React y Tailwind CSS estructurando aplicaciones modulares, limpias y ultra rápidas."
+				/>
+				<Card
+					step="02"
+					href="#"
+					title="Sistemas de Control"
+					body="Domina Git, GitHub y flujos de trabajo profesionales de CI/CD para que ningún error detenga tu despliegue."
+				/>
+				<Card
+					step="03"
+					href="#"
+					title="Despliegue Global"
+					body="Sube tus proyectos a producción en Vercel, Netlify o servidores en la nube en cuestión de segundos."
+				/>
+			</ul>
+		</section>
+
+		<footer class="footer">
+			&copy; 2026 Curso Tecnologías Web. Diseñado con vibras de verano.
+		</footer>
+	</main>
 </Layout>

@@ -1,0 +1,68 @@
+/* src/styles/global.css */
+@import "tailwindcss";
+@source "../**/*.astro";
+
+/* Tema global */
+.global-theme {
+    @apply bg-[#fbf9f4] text-slate-800 antialiased min-h-screen;
+}
+
+/* Animación del badge veraniego */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Clases de utilidad personalizadas para el Index */
+.page-wrapper {
+    @apply relative overflow-hidden;
+}
+.sun-blur {
+    @apply absolute top-0 left-1/2 -z-10 h-[600px] w-[1000px] -translate-x-1/2 rounded-full bg-radial from-orange-200/50 via-amber-100/30 to-transparent blur-3xl;
+}
+.hero-content {
+    @apply mx-auto max-w-5xl px-6 pt-24 pb-16 text-center sm:pt-32;
+}
+.summer-badge {
+    @apply inline-flex items-center rounded-full bg-orange-100/60 px-4 py-1.5 text-xs font-semibold text-orange-800 tracking-wide uppercase border border-orange-200/50;
+}
+.hero-title {
+    @apply mt-6 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-6xl max-w-3xl mx-auto leading-tight sm:leading-none;
+}
+.gradient-text {
+    @apply bg-gradient-to-r from-orange-600 via-amber-500 to-yellow-500 bg-clip-text text-transparent;
+}
+.hero-description {
+    @apply mt-6 text-lg leading-relaxed text-slate-700 max-w-2xl mx-auto;
+}
+.cta-group {
+    @apply mt-10 flex flex-wrap items-center justify-center gap-4;
+}
+.btn-primary {
+    @apply rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-orange-600/20 transition-all duration-200 hover:brightness-105 hover:shadow-orange-600/30;
+}
+.btn-secondary {
+    @apply rounded-xl bg-white/80 backdrop-blur-sm border border-orange-200/60 px-6 py-3.5 text-sm font-semibold text-slate-700 transition-all duration-200 hover:bg-orange-50/50;
+}
+.temario-content {
+    @apply mx-auto max-w-5xl px-6 py-16 sm:py-24;
+}
+.section-header {
+    @apply mx-auto max-w-2xl lg:text-center mb-14;
+}
+.section-subtitle {
+    @apply text-base font-semibold text-orange-600 uppercase tracking-wide;
+}
+.section-title {
+    @apply mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl;
+}
+.cards-grid {
+    @apply grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 p-0;
+}
+.footer {
+    @apply border-t border-orange-200/30 mx-auto max-w-5xl px-6 py-8 text-center text-xs text-slate-400;
+}
