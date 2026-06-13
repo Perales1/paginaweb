@@ -1,0 +1,31 @@
+---
+// src/components/Methodology.astro
+---
+<section class="reveal w-full max-w-5xl mt-32 mb-16 mx-auto bg-white/70 backdrop-blur-xl rounded-[2rem] border border-orange-100 shadow-lg p-10 sm:p-16">
+
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8 border-b border-orange-100/50 pb-6">
+        <h3 class="text-3xl sm:text-4xl font-black text-slate-900">Mi metodología</h3>
+
+        <a href="#sobre-mi" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-900 text-white font-bold rounded-xl shadow-xl shadow-slate-900/10 hover:-translate-y-1 hover:bg-orange-600 transition-all text-sm uppercase tracking-wider cursor-pointer">
+            👋 Conoce sobre mí &rarr;
+        </a>
+    </div>
+
+    <div class="prose prose-orange prose-lg max-w-none text-slate-600">
+        <p>
+            Aquí puedes detallar tus horarios, si usas Discord para dudas fuera de clase, cómo enfocas los proyectos prácticos, y por qué aprender contigo es mejor que verse 40 horas de tutoriales aburridos.
+        </p>
+    </div>
+</section>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
