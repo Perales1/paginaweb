@@ -1,0 +1,14 @@
+# Jekyll configuration to avoid processing source files that contain
+# front matter (like .astro components). This prevents GitHub Pages
+# (which runs Jekyll when configured to build from the repo) from
+# attempting to parse `.astro` files and failing with "Invalid YAML front matter".
+exclude:
+  - src
+  - node_modules
+  - .github
+  - .vscode
+  - .idea
+
+# Be explicit about safe mode
+safe: true
+
