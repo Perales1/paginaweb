@@ -24,11 +24,17 @@ jobs:
       - name: Build site
         run: npm run build --if-present
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
+      # Configure Pages to accept a build artifact from this workflow
+      - name: Configure Pages
+        uses: actions/configure-pages@v3
+
+      # Upload the built static output as an artifact for Pages
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
-          nojekyll: true
+          path: ./dist
+
+      # Deploy to GitHub Pages (serves the uploaded artifact)
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
 
